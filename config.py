@@ -112,9 +112,9 @@ i = 0
 with open("config.txt", "w", encoding="utf-8") as file:
     for code in processed_codes:
         if i == 0:
-            config_string = "#🌐 Updated on " + final_string + ":00 | update every 12 hours"
+            config_string = "#🌐 Terakhir diperbarui pada " + final_string + ":00"
         else:
-            config_string = "#🌐electron-v2ray " + str(final_string) + ":00-" + str(i)
+            config_string = "#KUYSHARE DUMP" + str(i)
         config_final = code + config_string
         file.write(config_final + "\n")
         i += 1
