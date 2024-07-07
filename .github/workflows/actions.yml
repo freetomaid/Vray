@@ -1,4 +1,4 @@
-name: run config.py
+name: config.py
 
 on:
   push:
