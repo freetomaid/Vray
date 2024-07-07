@@ -70,7 +70,7 @@ for page in html_pages:
 
     for code_tag in code_tags:
         code_content = code_tag.text.strip()
-        if "vless://" in code_content or "ss://" in code_content or "trojan://" in code_content:
+        if "vless://" in code_content or "ss://" in code_content or "vmess://" in code_content or "trojan://" in code_content:
             codes.append(code_content)
 
 codes = list(set(codes))  # Remove duplicates
@@ -101,7 +101,7 @@ for code in codes:
     vless_parts = code.split("vless://")
 
     for part in vmess_parts + vless_parts:
-        if "ss://" in part or "vless://" in part or "trojan://" in part:
+        if "ss://" in part or "vmess://" in part or "vless://" in part or "trojan://" in part:
             service_name = part.split("serviceName=")[-1].split("&")[0]
             processed_part = part.split("#")[0]
             processed_codes.append(processed_part)
@@ -112,9 +112,9 @@ i = 0
 with open("config.txt", "w", encoding="utf-8") as file:
     for code in processed_codes:
         if i == 0:
-            config_string = "#🌐 Terakhir diperbarui pada " + final_string + ":00"
+            config_string = "#🌐 Updated on " + final_string + ":00 | update every 12 hours"
         else:
-            config_string = "#KUYSHARE DUMP_" + str(i)
+            config_string = "#🔀 KuyShare" + str(final_string) + ":00-" + str(i)
         config_final = code + config_string
         file.write(config_final + "\n")
         i += 1
